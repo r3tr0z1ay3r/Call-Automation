@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 
 // NEW SECTION: This route will serve your index.html file
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'G:/Work Stuff/Interview Stuff/Blink Digital/Assignment - Call Automation/Code/index.html'));
 });
 
 
