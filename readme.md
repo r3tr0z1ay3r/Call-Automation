@@ -47,6 +47,7 @@ Follow these steps to get your project up and running.
 ```bash
 git clone https://github.com/your-username/ai-call-center.git
 cd ai-call-center
+<<<<<<< HEAD
 
 **2. Install Dependencies**
 ```bash
@@ -102,3 +103,5 @@ Your AI Call Center is now live!
 2.  **Run the Simulation:** Click the **"Run API Test Simulation"** button. You will see the call logs appear dynamically in the table.
 3.  **Make a Live Call:** Call your Twilio phone number from your mobile phone and follow the voice prompts. Your answers will appear in the dashboard in real-time.
 ```
+=======
+>>>>>>> 482250cf80178b9c5d4eb56a5e96137577c08bec
