@@ -10,12 +10,6 @@ This project is a working prototype of an AI-powered Interactive Voice Response 
 
 ## 🎥 Demo Video
 
-*(This is the section where you can insert your demo. Record a short video (using Loom, QuickTime, etc.) showing the dashboard and you making a call, then upload it to YouTube or another video service. Take a screenshot for the thumbnail.)*
-
-**To insert your video:**
-1.  Upload your video to a platform like YouTube or Loom and get the link.
-2.  Take an engaging screenshot of your demo to use as a thumbnail. Upload this image somewhere (e.g., in your GitHub repo).
-3.  Replace `link_to_your_thumbnail_image.png` and `link_to_your_video` in the line below.
 
 [![Project Demo](./Submission/Dashboard-Screenshot.png)](https://youtu.be/x5BVzP6cLpY)
 
@@ -53,3 +47,58 @@ Follow these steps to get your project up and running.
 ```bash
 git clone https://github.com/your-username/ai-call-center.git
 cd ai-call-center
+
+**2. Install Dependencies**
+```bash
+npm install
+```
+
+**3. Set Up Environment Variables**
+Create a file named `.env` in the root of your project and add your Twilio credentials. You can find these on your [Twilio Console dashboard](https://www.twilio.com/console).
+
+```
+# .env file
+TWILIO_ACCOUNT_SID=ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+TWILIO_AUTH_TOKEN=your_auth_token_here
+```
+
+**4. Configure the Call Forwarding Number**
+In `server.js`, find the following line and replace the placeholder with a real phone number (e.g., your mobile) in E.164 format. This is where the call will be forwarded.
+```javascript
+// server.js - inside the /route-call endpoint
+twiml.dial('+15551234567'); 
+```
+
+## ▶️ Running the Application
+
+To run the demo, you need to have three terminal windows open simultaneously.
+
+**Terminal 1: Start the Node.js Server**
+```bash
+node server.js
+```
+You should see the message: `Server running on port 3000`.
+
+**Terminal 2: Expose Your Server with ngrok**
+```bash
+ngrok http 3000
+```
+`ngrok` will provide a public "Forwarding" URL (e.g., `https://<random-string>.ngrok.io`). **Copy the `https` URL.**
+
+**Terminal 3: Configure the Twilio Webhook**
+1.  Go to your Twilio Console -> Phone Numbers -> Active Numbers.
+2.  Click on your Twilio number.
+3.  Scroll down to the "Voice & Fax" section.
+4.  Under "A CALL COMES IN", select "Webhook".
+5.  Paste your `ngrok` URL into the text box and add `/voice` at the end (e.g., `https://<random-string>.ngrok.io/voice`).
+6.  Ensure the method is `HTTP POST`.
+7.  Click **Save**.
+
+## 📞 How to Use the Demo
+
+Your AI Call Center is now live!
+
+1.  **View the Dashboard:** Open your `ngrok` URL in a web browser to see the dashboard.
+2.  **Run the Simulation:** Click the **"Run API Test Simulation"** button. You will see the call logs appear dynamically in the table.
+3.  **Make a Live Call:** Call your Twilio phone number from your mobile phone and follow the voice prompts. Your answers will appear in the dashboard in real-time.
+```
