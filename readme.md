@@ -10,12 +10,6 @@ This project is a working prototype of an AI-powered Interactive Voice Response 
 
 ## 🎥 Demo Video
 
-*(This is the section where you can insert your demo. Record a short video (using Loom, QuickTime, etc.) showing the dashboard and you making a call, then upload it to YouTube or another video service. Take a screenshot for the thumbnail.)*
-
-**To insert your video:**
-1.  Upload your video to a platform like YouTube or Loom and get the link.
-2.  Take an engaging screenshot of your demo to use as a thumbnail. Upload this image somewhere (e.g., in your GitHub repo).
-3.  Replace `link_to_your_thumbnail_image.png` and `link_to_your_video` in the line below.
 
 [![Project Demo](./Submission/Dashboard-Screenshot.png)](https://youtu.be/x5BVzP6cLpY)
 
